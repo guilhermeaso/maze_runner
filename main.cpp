@@ -4,18 +4,45 @@
 
 int main()
 {
-    int height, width, y0, x0;
+    int ch = 0, height = 20, width = 30;
+    int y = 0, x = 0, py = 1, px = 1;
+    char c = '*';
+
     initscr();
-    getmaxyx(stdscr, height, width);
-    WINDOW *win = newwin(height, width, 100, 100);
+    WINDOW *win = newwin(height, width, y, x);
+    refresh();
 
     cbreak();
-    // noecho();
+    noecho();
     keypad(stdscr, TRUE);
-    while(getch() != 'q') {
-	continue;	
-    }
 
+    while((ch != 'q') && (ch != 'Q')){
+	box(win, (int)c, (int)c); 
+	wrefresh(win);
+	ch = getch();
+
+	switch(ch) {
+	    case KEY_UP:
+		py -= 1;
+		mvwaddch(win, py, px, 'P');
+		break;
+	    case KEY_DOWN:
+		py += 1;
+		mvwaddch(win, py, px, 'P');
+		break;
+	    case KEY_RIGHT:
+		px += 1;
+		mvwaddch(win, py, px, 'P');
+		break;
+	    case KEY_LEFT:
+		px -= 1;
+		mvwaddch(win, py, px, 'P');
+		break;
+	    default:
+		break;
+	}
+    }
     endwin();
     return 0;
 }
+
