@@ -16,30 +16,31 @@ int main()
     noecho();
     keypad(stdscr, TRUE);
 
-    while((ch != 'q') && (ch != 'Q')){
-	box(win, (int)c, (int)c); 
-	wrefresh(win);
-	ch = getch();
+    while((ch != 'q') && (ch != 'Q')) {
+		box(win, (int)c, (int)c); 
+		wrefresh(win);
+		ch = getch();
 
-	switch(ch) {
-	    case KEY_UP:
-			py -= 1;
-			mvwaddch(win, py, px, 'P');
-			break;
-	    case KEY_DOWN:
-			py += 1;
-			mvwaddch(win, py, px, 'P');
-			break;
-	    case KEY_RIGHT:
-			px += 1;
-			mvwaddch(win, py, px, 'P');
-			break;
-	    case KEY_LEFT:
-			px -= 1;
-			mvwaddch(win, py, px, 'P');
-			break;
-	    default:
-			break;
+		switch(ch) {
+	        case KEY_UP:
+				py -= 1;
+				mvwaddch(win, py, px, 'P');
+				break;
+	        case KEY_DOWN:
+				py += 1;
+				mvwaddch(win, py, px, 'P');
+				break;
+	        case KEY_RIGHT:
+				px += 1;
+				mvwaddch(win, py, px, 'P');
+				break;
+	        case KEY_LEFT:
+				px -= 1;
+				mvwaddch(win, py, px, 'P');
+				break;
+	        default:
+				break;
+		}
 	}
 
 	endwin();
