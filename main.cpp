@@ -22,24 +22,24 @@ int main()
 		ch = getch();
 
 		switch(ch) {
-	        case KEY_UP:
-				py -= 1;
-				mvwaddch(win, py, px, 'P');
-				break;
-	        case KEY_DOWN:
-				py += 1;
-				mvwaddch(win, py, px, 'P');
-				break;
-	        case KEY_RIGHT:
-				px += 1;
-				mvwaddch(win, py, px, 'P');
-				break;
-	        case KEY_LEFT:
-				px -= 1;
-				mvwaddch(win, py, px, 'P');
-				break;
-	        default:
-				break;
+		case KEY_UP:
+			py -= 1;
+			mvwaddch(win, py, px, 'P');
+			break;
+		case KEY_DOWN:
+			py += 1;
+			mvwaddch(win, py, px, 'P');
+			break;
+		case KEY_RIGHT:
+			px += 1;
+			mvwaddch(win, py, px, 'P');
+			break;
+		case KEY_LEFT:
+			px -= 1;
+			mvwaddch(win, py, px, 'P');
+			break;
+		default:
+			break;
 		}
 	}
 
